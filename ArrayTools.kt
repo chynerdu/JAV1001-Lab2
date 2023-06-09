@@ -8,7 +8,14 @@ fun main() {
     println(reverseArray(arrayOf(1, 2, 3, 4, 5, 6, 7, 34, 28)))
     val ciphertext = caesarCipherFunc()
     println(ciphertext)
+    println(findMaxValue(arrayOf(-1, -2, -3, -4, -5)))
 }
+
+/**
+ * Find the average of an array
+ * @param inputArray contains the array to be averaged
+ * @return the average of type Double
+ */
 
 fun averageArray(inputArray: Array<Int>): Double {
     var listSum = 0.0
@@ -18,6 +25,13 @@ fun averageArray(inputArray: Array<Int>): Double {
     return listSum / inputArray.size
 }
 
+/**
+ * Check if a value exist in an array
+ * @param valueList contains an array of string
+ * @param value is the value to check if it exist in the array
+ * @return A boolean value if the value exists or not
+ */
+
 fun checkValueExistence(valueList: Array<Int>, value: Int): Boolean {
     for (x in valueList) {
         if (x == value) {
@@ -26,6 +40,12 @@ fun checkValueExistence(valueList: Array<Int>, value: Int): Boolean {
     }
     return false
 }
+
+/**
+ * Reverse an array
+ * @param inputArray contains the array to be reversed
+ * @return A mutable list of the reversed array
+ */
 
 fun reverseArray(inputArray: Array<Int>): MutableList<Int> {
     var reversedList = MutableList<Int>(inputArray.size) { 0 }
@@ -37,6 +57,11 @@ fun reverseArray(inputArray: Array<Int>): MutableList<Int> {
     }
     return reversedList
 }
+
+/**
+ * Caeser Cipher function encrypts the string entered by the user by a specific shift value
+ * @return An encrypted string
+ */
 
 fun caesarCipherFunc(): String {
     try {
@@ -61,4 +86,14 @@ fun caesarCipherFunc(): String {
     } catch (e: NumberFormatException) {
         return "Invalid input entered"
     }
+}
+
+fun findMaxValue(inputList: Array<Int>): Int {
+    var maxValue = Int.MIN_VALUE
+    for (value in inputList) {
+        if (value > maxValue) {
+            maxValue = value
+        }
+    }
+    return maxValue
 }

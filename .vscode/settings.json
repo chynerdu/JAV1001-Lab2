@@ -1,0 +1,9 @@
+{
+    "editor.formatOnSave": true,
+    "[kotlin]": {
+      "editor.defaultFormatter": "cstef.kotlin-formatter"
+  },
+    "editor.defaultFormatter": "cstef.kotlin-formatter",
+    "prettier.requireConfig": true,
+    "editor.formatOnSaveMode": "file"
+  }
